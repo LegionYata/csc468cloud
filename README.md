@@ -1,2 +1,2 @@
 # csc468cloud
-Computer Science: Topics in Computer Science [Fall 2025]
+Computer Science: Intro To Cloud Computing Secondary Docker Branch

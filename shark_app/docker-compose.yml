@@ -1,0 +1,24 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - shark-network
+
+  nodeapp:
+    build: ./node_server
+    container_name: node_server
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/sharkinfo
+    depends_on:
+      - mongo
+    networks:
+      - shark-network
+
+networks:
+  shark-network:
+    driver: bridge
